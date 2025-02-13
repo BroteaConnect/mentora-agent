@@ -24,7 +24,7 @@ export class MentoraService implements IMentoraService {
 
     async getMentors(): Promise<MentoraResponse<Mentor[]>> {
         try {
-            const response = await axios.get<MentoraResponse<Mentor[]>>(`${this.baseUrl}/mentors`);
+            const response = await axios.get<MentoraResponse<Mentor[]>>(`${this.baseUrl}/api/v1/mentors`);
             return response.data;
         } catch (error) {
             if (axios.isAxiosError(error)) {
