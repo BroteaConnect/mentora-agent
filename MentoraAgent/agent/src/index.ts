@@ -27,6 +27,7 @@ import { PrimusAdapter } from "@elizaos/plugin-primus";
 import { lightningPlugin } from "@elizaos/plugin-lightning";
 import { elizaCodeinPlugin, onchainJson } from "@elizaos/plugin-iq6900";
 import { dcapPlugin } from "@elizaos/plugin-dcap";
+import { mentoraPlugin } from "@elizaos/plugin-mentora";
 import {
     AgentRuntime,
     CacheManager,
@@ -1018,6 +1019,7 @@ export async function createAgent(
         character,
         // character.plugins are handled when clients are added
         plugins: [
+            mentoraPlugin,
             parseBooleanFromText(getSecret(character, "BITMIND")) &&
             getSecret(character, "BITMIND_API_TOKEN")
                 ? bittensorPlugin
